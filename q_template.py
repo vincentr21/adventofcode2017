@@ -1,5 +1,5 @@
 # Vincent Ren
-# 2017-12-03
+# 2017-12-05
 
 # ================== Solutions ==================
 def part1(inputs):
@@ -33,7 +33,7 @@ def part2(inputs):
 
 # =================== Driver ====================
 
-with open("in3.txt", "r") as f:
+with open("in2.txt", "r") as f:
 
     # as single string
     # inputs = f.read()
@@ -42,10 +42,22 @@ with open("in3.txt", "r") as f:
     # inputs = int(f.read())
 
     # as lists of ints
-    inputs = [[int(x) for x in row.split('\t')] for row in f.read().split('\n')]
+    # inputs = [[int(x) for x in row.split()] for row in f.read().split('\n')]
+
+    # as single array of ints
+    inputs = [ int(row) for row in f.read().split('\n')]
 
     # as something else
-    # inputs = [[int(x) for x in row.split('\t')] for row in f.read().split('\n')]
+    # inputs = [[x for x in row.split()] for row in f.read().split('\n')]
 
-    print(part1(inputs))
-    # print(part2(inputs))
+    print("\n----------------- input stats -----------------")
+    print("len(inputs):", len(inputs))
+    # print("row sum", sum(inputs[0]))
+    print("inputs[0]:", inputs[0])
+    print("len(inputs[0]):", len(inputs[0]))
+
+    print("\n----------------- solutions -----------------")
+    print("part1:", part1(inputs))
+    # print("part2:", part2(inputs))
+
+    print("\n")
